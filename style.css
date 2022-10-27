@@ -1,0 +1,134 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    padding: 15px 0;
+
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+    color:gray;
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1230px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero_container {
+    display: flex;
+    gap: 20px;
+
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1013px) and (max-width: 1200px) {
+    .hero_container {flex-direction:row;}
+}
+
+@media (min-width: 250px) and (max-width: 1013px) {
+    .hero_container {flex-direction:column-reverse;}
+}
+
+.hero_about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero_title {
+    font-size: 48px;
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.hero_subtitle {
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.hero_link a{
+    margin-right: 10px;
+
+    font-size: 30px;
+    color: black;
+    transition: color .3s;
+}
+
+.hero_link a:hover {
+    color: indigo;
+}
+
+.hero_box {
+    max-width: 500px;
+    max-height: 600px;
+    justify-content: center;
+    overflow: hidden;
+
+    background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
+    border: 10px solid white;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+
+    animation: ava-animate 5s infinite alternate;
+}
+
+@keyframes ava-animate {
+    0% {
+        border-radius: 72% 28% 62% 38% / 34% 76% 24% 66%  ;
+    }
+
+    100% {
+        border-radius: 27% 73% 33% 67% / 79% 36% 64% 21% ;
+    }
+}
+
+.hero_box-img {
+    animation: ava-bg 3s infinite alternate;
+}
+
+@keyframes ava-bg {
+    from {
+        backdrop-filter: hue-rotate(0deg);
+    }
+
+    to {
+        backdrop-filter: hue-rotate(90deg);
+    }
+}
